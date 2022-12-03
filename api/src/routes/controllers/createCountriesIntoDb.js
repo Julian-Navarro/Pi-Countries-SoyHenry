@@ -1,4 +1,6 @@
 const { Country } = require("../../db");
+const axios = require("axios");
+const url = "https://restcountries.com/v3/all";
 
 const createCountriesIntoDb = async () => {
   const apiInfo = await axios.get(url);

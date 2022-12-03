@@ -25,3 +25,5 @@ router.get("/:idCountry", async (req, res) => {
     res.status(404).send(error);
   }
 });
+
+module.exports = router;
