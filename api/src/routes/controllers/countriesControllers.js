@@ -15,6 +15,24 @@ router.get("/", async (req, res) => {
     res.status(404).send(error);
   }
 });
+
+router.get("/continents", async (req, res) => {
+  try {
+    const dbCountries = await Country.findAll();
+    let arrContinentsFilt = [];
+    dbCountries.forEach((c) => {
+      if (!arrContinentsFilt.includes(c.continent)) {
+        arrContinentsFilt.push(c.continent);
+      }
+    });
+    console.log(arrContinentsFilt);
+    res.status(200).send(arrContinentsFilt);
+  } catch (error) {
+    console.log(error);
+    res.status(404).send(error);
+  }
+});
+
 router.get("/:idCountry", async (req, res) => {
   try {
     const { idCountry } = req.params;
