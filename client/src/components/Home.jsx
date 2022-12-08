@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCountries, getContinents} from "../actions";
+import { getCountries, getContinents, getActivities} from "../actions";
 import Navbar from "./Navbar.jsx";
 import Cards from "./Cards.jsx";
 import Paginate from "./Paginate.jsx";
@@ -21,9 +21,11 @@ const paginate = (number) => {
     setCurrentPage(number);
 };
 
+
 useEffect(()=>{
     dispatch(getCountries())
     dispatch(getContinents())
+dispatch(getActivities())
 },[dispatch])
 
 return (

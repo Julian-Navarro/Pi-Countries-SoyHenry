@@ -1,14 +1,15 @@
-import React from "react";
-import { getCountries, searchByName, filterContinents } from "../actions";
+import React, { useEffect } from "react";
+import { getCountries, searchByName, filterContinents, getActivities } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 export default function Navbar ({setCurrentPage}) {
 const dispatch = useDispatch();
 const continents = useSelector((state) => state.continents)
-// const continentsToFilter = useSelector((state) => state.continentsToFilter)
+const continentsToFilter = useSelector((state) => state.continentsToFilter)
+// const [continentsToFilter, setContinentsToFilter] = useState([]);
 const [country, setCountry] = useState("");
-const defaultValue = "Select Continent"
+const defaultValue = "default"
 
 
 function handleButtonRefresh(e){
@@ -25,9 +26,25 @@ function handleSubmit(e) {
     dispatch(searchByName(country))
 };
 function handleFilterContinents(e) {
-    e.preventDefault;
-    dispatch(filterContinents(e.target.value))
-}
+    e.preventDefault();
+    if(!(e.target.value === "default")) {
+        if(!continentsToFilter.includes(e.target.value)) {
+            continentsToFilter.push(e.target.value)
+        };
+        dispatch(filterContinents(continentsToFilter));
+        setCurrentPage(1);
+        e.target.value = defaultValue
+    };
+};
+// useEffect(()=>{
+// dispatch(getActivities())
+
+// },[dispatch])
+
+useEffect(()=>{
+    // dispatch(getActivities())
+},[continentsToFilter])
+
     return (
         <div>
             <div>
@@ -36,7 +53,7 @@ function handleFilterContinents(e) {
                 </div>
             <button onClick={(e) => { handleButtonRefresh(e) }} >Refresh Countries</button>
 
-            <select onChange={(e)=>{handleFilterContinents(e)}} name="" id="">
+            <select onChange={(e) => {handleFilterContinents(e)}} name="" id="">
                 <option value="default">Select Continent</option>
                 {
                     continents.map((c)=> <option key={c} value={c}>{c}</option> )
