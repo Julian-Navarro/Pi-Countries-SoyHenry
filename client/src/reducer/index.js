@@ -17,6 +17,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         continents: action.payload,
       };
+    case "SEARCH_BY_NAME":
+      return {
+        ...state,
+        countries: action.payload,
+      };
     default:
       return {
         ...state,

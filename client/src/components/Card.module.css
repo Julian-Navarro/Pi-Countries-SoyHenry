@@ -1,0 +1,18 @@
+.divCard {
+padding: 20px;
+}
+.card {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: rgba(255, 255, 255, 0.845);
+}
+.card img {
+    height:170px;
+    width: 300px;
+}
