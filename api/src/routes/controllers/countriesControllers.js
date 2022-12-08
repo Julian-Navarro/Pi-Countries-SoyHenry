@@ -25,7 +25,6 @@ router.get("/continents", async (req, res) => {
         arrContinentsFilt.push(c.continent);
       }
     });
-    console.log(arrContinentsFilt);
     res.status(200).send(arrContinentsFilt);
   } catch (error) {
     console.log(error);
