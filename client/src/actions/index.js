@@ -60,10 +60,29 @@ export function filterContinents(continentsToFilter) {
           }
         });
       });
-      console.log(countriesResult);
       return dispatch({
         type: "FILTER_CONTINENTS",
         payload: countriesResult,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function filterByActivity(activity) {
+  return async function (dispatch) {
+    try {
+      const json = await axios.get(
+        "http://localhost:3001/activities/activities"
+      );
+      json.data.forEach((a) => {
+        if (a.name === activity) {
+          return dispatch({
+            type: "FILTER_BY_ACTIVITY",
+            payload: a.countries,
+          });
+        }
       });
     } catch (error) {
       console.log(error);

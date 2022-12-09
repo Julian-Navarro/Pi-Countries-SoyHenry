@@ -25,7 +25,7 @@ const paginate = (number) => {
 useEffect(()=>{
     dispatch(getCountries())
     dispatch(getContinents())
-dispatch(getActivities())
+    dispatch(getActivities())
 },[dispatch])
 
 return (
