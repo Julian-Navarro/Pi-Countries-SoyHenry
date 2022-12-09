@@ -89,3 +89,31 @@ export function filterByActivity(activity) {
     }
   };
 }
+
+export function sortByAlf(value) {
+  return async function (dispatch) {
+    if (value === "ascending") {
+      return dispatch({
+        type: "SORT_ALF_ASC",
+      });
+    } else if (value === "descending") {
+      return dispatch({
+        type: "SORT_ALF_DESC",
+      });
+    }
+  };
+}
+
+export function sortByPopulation(value) {
+  return async function (dispatch) {
+    if (value === "max") {
+      return dispatch({
+        type: "SORT_MAX_POPULATION",
+      });
+    } else if (value === "min") {
+      return dispatch({
+        type: "SORT_MIN_POPULATION",
+      });
+    }
+  };
+}

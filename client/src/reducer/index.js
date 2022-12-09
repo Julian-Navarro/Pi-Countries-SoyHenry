@@ -40,6 +40,66 @@ function rootReducer(state = initialState, action) {
         ...state,
         countries: action.payload,
       };
+    case "SORT_ALF_ASC":
+      return {
+        ...state,
+        countries: state.countries
+          .map((e) => e)
+          .sort((a, b) => {
+            if (a.name.toLowerCase() > b.name.toLowerCase()) {
+              return 1;
+            } else {
+              return -1;
+            }
+          }),
+      };
+    case "SORT_ALF_DESC":
+      return {
+        ...state,
+        countries: state.countries
+          .map((e) => e)
+          .sort((a, b) => {
+            if (a.name.toLowerCase() > b.name.toLowerCase()) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }),
+      };
+    case "SORT_MAX_POPULATION":
+      return {
+        ...state,
+        countries: state.countries
+          .map((e) => e)
+          .sort((a, b) => {
+            if (Number(a.population) > Number(b.population)) {
+              return -1;
+            }
+            if (Number(a.population) === Number(b.population)) {
+              return 0;
+            }
+            if (Number(a.population) < Number(b.population)) {
+              return 1;
+            }
+          }),
+      };
+    case "SORT_MIN_POPULATION":
+      return {
+        ...state,
+        countries: state.countries
+          .map((e) => e)
+          .sort((a, b) => {
+            if (Number(a.population) > Number(b.population)) {
+              return 1;
+            }
+            if (Number(a.population) === Number(b.population)) {
+              return 0;
+            }
+            if (Number(a.population) < Number(b.population)) {
+              return -1;
+            }
+          }),
+      };
     default:
       return {
         ...state,

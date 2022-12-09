@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getCountries, searchByName, filterContinents, filterByActivity } from "../actions";
+import { getCountries, searchByName, filterContinents, filterByActivity, sortByAlf, sortByPopulation } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -43,6 +43,19 @@ function handleFilterActivity(e) {
     setCurrentPage(1)
 }
 
+function handleSortAlf(e) {
+    e.preventDefault();
+    dispatch(sortByAlf(e.target.value))
+    setCurrentPage(1)
+    e.target.value = defaultValue
+}
+function handleSortByPopulation(e) {
+    e.preventDefault()
+    dispatch(sortByPopulation(e.target.value))
+    setCurrentPage(1)
+    e.target.value = defaultValue
+}
+
 useEffect(()=>{
 
 },[continentsToFilter])
@@ -54,13 +67,30 @@ useEffect(()=>{
                 <button type="submit" onClick={(e)=>{ handleSubmit(e); setCurrentPage(1) }}>Search</button>
             </div>
             <button onClick={(e) => { handleButtonRefresh(e) }} >Refresh Countries</button>
+            {/* **************** SELECT CONTINENTES  **************** */}
             <select onChange={(e) => {handleFilterContinents(e)}} name="" id="">
                 <option value="default">Select Continent</option>
                 {   continents.map((c)=> <option key={c} value={c}>{c}</option>)  }
             </select>
+
+            {/*  ***************** SELECT ACTIVITIES *****************  */}
             <select onChange={(e)=>{handleFilterActivity(e)}} name="" id="">
                 <option value="default">Select Activity</option>
                 { activities.map((a)=> <option key={a.id} value={a.name}>{a.name}</option> ) }
+            </select>
+
+            {/* *************** SELECT SORT ALF *************** */}
+            <select onChange={(e)=>{ handleSortAlf(e) }} name="" id="">
+                <option value="default">Sort Alf</option>
+                <option value="ascending">Asc</option>
+                <option value="descending">Desc</option>
+            </select>
+
+            {/* ************** SELECT SORT POPULATION ************** */}
+            <select onChange={(e)=>{ handleSortByPopulation(e) }} name="" id="">
+                <option value="default">Sort by Popoulation</option>
+                <option value="max">Max</option>
+                <option value="min">Min</option>
             </select>
         </div>
 
