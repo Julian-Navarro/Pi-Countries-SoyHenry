@@ -37,7 +37,6 @@ router.get("/activities", async (req, res) => {
         },
       ],
     });
-    console.log(json);
     res.status(200).send(json);
   } catch (error) {
     console.log(error);
