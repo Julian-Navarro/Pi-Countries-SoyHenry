@@ -7,7 +7,7 @@ router.post("/", async (req, res) => {
   try {
     const { name, difficult, duration, seasons, countries } = req.body;
     if (!name || !countries) {
-      throw Error("There are missing data to create de activity!");
+      throw Error("There are missing data to create the activity!");
     }
     let newActivity = postActivity(req.body);
     res.status(200).send("Activity created succesfully");
