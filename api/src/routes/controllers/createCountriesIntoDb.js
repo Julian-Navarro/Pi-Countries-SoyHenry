@@ -4,6 +4,7 @@ const url = "https://restcountries.com/v3/all";
 
 const createCountriesIntoDb = async () => {
   const apiInfo = await axios.get(url);
+
   const countries = apiInfo.data.map((c) => {
     let capital = c.capital ? c.capital[0] : "Capital doesn't exist";
     return {
@@ -34,6 +35,8 @@ const createCountriesIntoDb = async () => {
     });
   });
 };
+
+// const db = await Country.findAll({ include: [{ model: Activity }] });
 
 module.exports = {
   createCountriesIntoDb,
