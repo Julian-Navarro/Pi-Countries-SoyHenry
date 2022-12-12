@@ -41,6 +41,7 @@ function handleFilterActivity(e) {
     e.preventDefault();
     dispatch(filterByActivity(e.target.value))
     setCurrentPage(1)
+    e.target.value = defaultValue
 }
 
 function handleSortAlf(e) {
@@ -67,26 +68,23 @@ useEffect(()=>{
                 <button type="submit" onClick={(e)=>{ handleSubmit(e); setCurrentPage(1) }}>Search</button>
             </div>
             <button onClick={(e) => { handleButtonRefresh(e) }} >Refresh Countries</button>
-            {/* **************** SELECT CONTINENTES  **************** */}
+            
             <select onChange={(e) => {handleFilterContinents(e)}} name="" id="">
                 <option value="default">Select Continent</option>
                 {   continents.map((c)=> <option key={c} value={c}>{c}</option>)  }
             </select>
 
-            {/*  ***************** SELECT ACTIVITIES *****************  */}
             <select onChange={(e)=>{handleFilterActivity(e)}} name="" id="">
                 <option value="default">Select Activity</option>
                 { activities.map((a)=> <option key={a.id} value={a.name}>{a.name}</option> ) }
             </select>
 
-            {/* *************** SELECT SORT ALF *************** */}
             <select onChange={(e)=>{ handleSortAlf(e) }} name="" id="">
                 <option value="default">Sort Alf</option>
                 <option value="ascending">Asc</option>
                 <option value="descending">Desc</option>
             </select>
 
-            {/* ************** SELECT SORT POPULATION ************** */}
             <select onChange={(e)=>{ handleSortByPopulation(e) }} name="" id="">
                 <option value="default">Sort by Popoulation</option>
                 <option value="max">Max</option>

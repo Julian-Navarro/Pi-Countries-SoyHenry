@@ -4,6 +4,7 @@ const initialState = {
   continents: [],
   continentsToFilter: [],
   activities: [],
+  countryDetail: {},
 };
 
 function rootReducer(state = initialState, action) {
@@ -99,6 +100,11 @@ function rootReducer(state = initialState, action) {
               return -1;
             }
           }),
+      };
+    case "GET_DETAIL":
+      return {
+        ...state,
+        countryDetail: action.payload,
       };
     default:
       return {
