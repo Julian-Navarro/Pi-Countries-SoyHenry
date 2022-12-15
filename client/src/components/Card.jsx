@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 export default function Card({ id, img, name, continent, population, activities }) {
     let strAct = "";
-    activities.forEach((a)=> strAct += a.name + ", " );
+    if(activities !== undefined) activities.forEach((a)=> strAct += a.name + ", " )
     let newStrAct = strAct.slice(0,-2)
 
     return (

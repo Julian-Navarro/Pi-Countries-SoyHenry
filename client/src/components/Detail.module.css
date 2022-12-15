@@ -2,7 +2,7 @@
     border: 1px solid black;
     border-radius: 15px;
     width: 900px;
-    height: 600px;
+    height: 750px;
     display: flex;
     flex-flow:column ;
     justify-content: center;
@@ -12,4 +12,22 @@
 .card img {
     width: 600px;
     height: 300px;
+}
+.activitiesContainer {
+    display: flex;
+    padding: 20px;
+    width: 900px;
+    height: 700px;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+    left: 950px;
+    bottom: 130px;
+}
+.activities {
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 400px;
+    height: 200px;
 }

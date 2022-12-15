@@ -122,21 +122,12 @@ export function getDetail(idCountry) {
   return async function (dispatch) {
     try {
       const json = await axios.get(
-        `https://restcountries.com/v3/alpha/${idCountry}`
+        `http://localhost:3001/countries/${idCountry}`
       );
-      const country = {
-        id: json.data[0].cca3,
-        name: json.data[0].name.common,
-        population: json.data[0].population,
-        area: json.data[0].area,
-        continent: json.data[0].region,
-        subregion: json.data[0].subregion,
-        img: json.data[0].flags[0],
-        capital: json.data[0].capital[0],
-      };
+
       return dispatch({
         type: "GET_DETAIL",
-        payload: country,
+        payload: json.data,
       });
     } catch (error) {
       console.log(error);
