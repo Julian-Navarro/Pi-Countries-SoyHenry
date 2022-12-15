@@ -20,7 +20,6 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const json = await Activity.findAll();
-    console.log(json);
     res.status(200).send(json);
   } catch (error) {
     console.log(error);

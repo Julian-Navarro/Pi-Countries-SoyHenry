@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const { getApiInfo } = require("./getApiInfo");
-const { Country } = require("../../db");
+const { Country, Activity } = require("../../db");
 
 router.get("/", async (req, res) => {
   try {
@@ -35,8 +35,11 @@ router.get("/continents", async (req, res) => {
 router.get("/:idCountry", async (req, res) => {
   try {
     const { idCountry } = req.params;
-    const dbCountry = await Country.findByPk(idCountry);
-    res.status(200).send(dbCountry);
+    const allCountries = await Country.findAll({
+      include: [{ model: Activity }],
+    });
+    const dbCountry = allCountries.filter((c) => c.id === idCountry);
+    res.status(200).send(dbCountry[0]);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
