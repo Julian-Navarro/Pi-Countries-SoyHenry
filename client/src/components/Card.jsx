@@ -14,7 +14,7 @@ export default function Card({ id, img, name, continent, population, activities 
                 <img src={img} alt="img not found" />
                 <h3>Continent: {continent}</h3>
                 <h3>Population: {population}</h3>
-                <h3>Activities: {newStrAct}</h3>
+                {activities.length?<h3>Activities: {newStrAct}</h3>:null}
             </div>
         </div>
     )

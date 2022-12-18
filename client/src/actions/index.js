@@ -134,3 +134,18 @@ export function getDetail(idCountry) {
     }
   };
 }
+
+export function postActivity(activity) {
+  return async function (dispatch) {
+    try {
+      let newActivity = await axios.post(
+        "http://localhost:3001/activities",
+        activity
+      );
+      console.log(newActivity);
+      return newActivity;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

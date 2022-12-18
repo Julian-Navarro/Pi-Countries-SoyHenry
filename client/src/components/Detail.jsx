@@ -35,7 +35,7 @@ useEffect(()=>{
                 <div className={s.activities} key={a.id}>
                      <h3>{a.name}</h3>
                      <h3>Difficult: {a.difficult}</h3>
-                     <h3>Duration: {a.duration}</h3>
+                     <h3>Duration: {a.duration} min</h3>
                      <h3>Seasons: {a.seasons}</h3>
                      <h4>id: {a.id}</h4>
                 </div>

@@ -106,6 +106,10 @@ function rootReducer(state = initialState, action) {
         ...state,
         countryDetail: action.payload,
       };
+    case "POST_ACTIVITY":
+      return {
+        ...state,
+      };
     default:
       return {
         ...state,

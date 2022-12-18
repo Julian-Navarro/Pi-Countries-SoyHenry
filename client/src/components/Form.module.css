@@ -2,3 +2,36 @@
     display: flex;
     flex-direction: column;
 }
+.divCountriesSelected {
+    border: 1px solid black;
+    border-radius: 10px;
+    /* padding: 4px; */
+    width: 150px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerCountriesSelected {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+}
+.seasons {
+    border: 1px solid black;
+    width: 100px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.seasonsContainer {
+    display: flex;
+    border: 1px solid black;
+    padding: 5px;
+    width: 600px;
+    justify-content: space-around;
+}
