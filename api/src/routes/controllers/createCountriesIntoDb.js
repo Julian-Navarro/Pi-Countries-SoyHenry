@@ -36,8 +36,6 @@ const createCountriesIntoDb = async () => {
   });
 };
 
-// const db = await Country.findAll({ include: [{ model: Activity }] });
-
 module.exports = {
   createCountriesIntoDb,
 };

@@ -16,11 +16,11 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       difficult: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       duration: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
       },
       seasons: {

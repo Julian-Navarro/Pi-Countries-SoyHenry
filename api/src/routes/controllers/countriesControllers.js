@@ -35,11 +35,10 @@ router.get("/continents", async (req, res) => {
 router.get("/:idCountry", async (req, res) => {
   try {
     const { idCountry } = req.params;
-    const allCountries = await Country.findAll({
-      include: [{ model: Activity }],
+    const dbCountry = await Country.findByPk(idCountry, {
+      include: [{ model: Activity, through: { attributes: [] } }],
     });
-    const dbCountry = allCountries.filter((c) => c.id === idCountry);
-    res.status(200).send(dbCountry[0]);
+    res.status(200).send(dbCountry);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
