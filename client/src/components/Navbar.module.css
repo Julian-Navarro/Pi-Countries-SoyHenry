@@ -1,0 +1,314 @@
+.divContainer {
+    width: 100%;
+    display: flex;
+}
+
+.btnCreateContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    margin: 10px;
+}
+
+.btnCreate{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(166, 166, 166);
+    transition: 1s;
+    font-size: 26px;
+    background-color: #262c37;
+    width: 100%;
+}
+
+.btnCreate:hover{
+    color: #fff;
+}
+
+.btnCreate span{
+    display: block;
+    position: absolute;
+    background-color: #2894ff;
+}
+
+a span:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+a:hover span:nth-child(1){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+a span:nth-child(2) {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+a:hover span:nth-child(2) {
+    transform: scaleY(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+a span:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: .5s;
+}
+
+a:hover span:nth-child(3) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+a:hover span:nth-child(4) {
+    transform: scaleY(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+/* ************************************************ */
+
+button span:nth-child(1) {
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+button:hover span:nth-child(1) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+button span:nth-child(2) {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+button:hover span:nth-child(2) {
+    transform: scaleY(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+button span:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: .5s;
+}
+
+button:hover span:nth-child(3) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+button span:nth-child(4) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+button:hover span:nth-child(4) {
+    transform: scaleY(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+
+
+
+.divInputContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 4vh; 
+    padding: 4px;
+}
+.divInputContainer input {
+    height: 50px;
+    font-size: 22px;
+    border-radius: 4px;
+    background-color: #262c37;
+    color: rgb(166, 166, 166);
+}
+
+.btnInputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 4vh;
+    margin: 10px;
+}
+
+.btnInput{
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    color: rgb(166, 166, 166);
+    transition: 1s;
+    font-size: 26px;
+    background-color: #262c37;
+    cursor: pointer;
+}
+
+.btnInput:hover {
+    color: #fff;
+}
+
+.btnInput span {
+    display: block;
+    position: absolute;
+    background-color: #2894ff;
+}
+
+
+.btnSelect{
+background-color: #262c37;
+position: relative;
+display: inline-block;
+padding:1px 1px;
+color: rgb(166, 166, 166);
+letter-spacing: 4px;
+font-size: 18px;
+text-decoration: none;
+overflow: hidden;
+transition: 0.2s;
+width: 250px;
+height: 36px;
+}
+
+.btnSelect:hover{
+    background-color: #3d4658;
+    box-shadow:  
+    0 0 100px #397fff3a, 
+    0 0 40px #397fff3a,
+    0 0 80px #397fff3a;
+    transition-delay: 1.2s;
+    color: #fff;
+}
+.btnSelect span{
+    position: absolute;
+    display: block;
+}
+.btnsSelects {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #65e0ff9a);
+}
+
+.btnSelect:hover #span1 {
+    left: 100%;
+    transition: 1s;
+}
+
+#span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg, transparent, #65e0ff9a);
+}
+.btnSelect:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span2{
+    top: -100%;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #65e0ff9a);
+}
+.btnSelect:hover #span2{
+    top: 100%;
+    right: 0;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(360, transparent, #65e0ff9a);
+}
+.btnSelect:hover #span4{
+    background-color: #65e0ff9a;
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+.btnsRefreshxCreate {
+    display: flex;
+    flex-direction: column-reverse;
+}
+

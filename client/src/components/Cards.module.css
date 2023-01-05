@@ -1,6 +1,9 @@
 .cards {
-    background: linear-gradient(90deg, rgba(34, 17, 115, 0.541) 15%, rgba(20, 72, 118, 0.574) 100%);
+    /* background: linear-gradient(90deg, rgba(220, 139, 249, 0.434) 15%, rgba(85, 193, 252, 0.574) 100%); */
     display: flex;
     flex-wrap: wrap;
-    
-}
+    width: 1500px;
+    /* height: 780px; */
+    justify-content: center;
+    align-items: center;
+};

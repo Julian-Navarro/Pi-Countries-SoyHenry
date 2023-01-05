@@ -8,9 +8,7 @@ import Form from "./components/Form.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <h1>Henry Countries</h1>
-      </div>
+      <div className="App"></div>
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />

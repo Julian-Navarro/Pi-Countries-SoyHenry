@@ -1,0 +1,37 @@
+.divContainer {
+    border: none;
+}
+.gridContainer {
+    border: 2px solid black;
+    background-color: rgba(128, 128, 128, 0.637);
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: 200px 380px 380px;
+    grid-template-columns: 40% 40% 20%;
+}
+
+.item {
+    border: medium solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridContainer .item:nth-child(1) {
+    background: linear-gradient(45deg, rgb(0, 0, 0) 5%, rgb(0, 0, 0) 70%, rgba(9, 0, 63, 0.822) 100%);
+    grid-area: 1 / 1 / 1 / span 3;
+}
+.gridContainer .item:nth-child(2) {
+    background-image: url("https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2019/10/hipertextual-disena-tus-propios-mapas-personalizados-2019672981.jpg?fit=1200%2C674&quality=60&strip=all&ssl=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 3;
+}
+.gridContainer .item:nth-child(3) {
+    background: linear-gradient(90deg, rgb(0, 0, 0) 30%, rgba(9, 0, 63, 0.822) 100%);
+    grid-column: 3;
+    grid-row: 2 / span 3;
+}

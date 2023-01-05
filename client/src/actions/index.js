@@ -46,19 +46,12 @@ export function searchByName(country) {
   };
 }
 
-export function filterContinents(continentsToFilter) {
+export function filterContinents(continent) {
   return async function (dispatch) {
     try {
       const allCountries = await axios.get("http://localhost:3001/countries");
-      let countriesResult = [];
-      continentsToFilter.forEach(async (continent) => {
-        await allCountries.data.forEach((country) => {
-          if (country.continent) {
-            if (country.continent === continent) {
-              countriesResult.push(country);
-            }
-          }
-        });
+      let countriesResult = allCountries.data.filter((c) => {
+        return c.continent === continent;
       });
       return dispatch({
         type: "FILTER_CONTINENTS",
@@ -76,13 +69,17 @@ export function filterByActivity(activity) {
       const json = await axios.get(
         "http://localhost:3001/activities/activities"
       );
+      let names = [];
       json.data.forEach((a) => {
         if (a.name === activity) {
-          return dispatch({
-            type: "FILTER_BY_ACTIVITY",
-            payload: a.countries,
-          });
+          a.countries.forEach((c) => names.push(c.name));
         }
+      });
+      const countries = await axios.get("http://localhost:3001/countries");
+      let newCountries = countries.data.filter((c) => names.includes(c.name));
+      return dispatch({
+        type: "FILTER_BY_ACTIVITY",
+        payload: newCountries,
       });
     } catch (error) {
       console.log(error);
@@ -124,7 +121,6 @@ export function getDetail(idCountry) {
       const json = await axios.get(
         `http://localhost:3001/countries/${idCountry}`
       );
-
       return dispatch({
         type: "GET_DETAIL",
         payload: json.data,
