@@ -9,10 +9,8 @@
     font-size: 2vh;
     cursor: pointer;
     border: none;
-    /* text-transform: uppercase;  */
     transition: .9s ease all;
     border-radius: 4px;
-    /* margin-left: 100px; */
 }
 .btn.btn1 svg{
     color: #fff;
@@ -24,8 +22,7 @@
     background-color: rgb(91, 91, 91);
 }
 .btn.btn1 span{
-/* background-color: aqua; */
-position: relative; /* ABSOLUTE / RELATIVE*/
+position: relative; 
 transition: .4s ease-in-out all;
 
 }
@@ -33,7 +30,6 @@ transition: .4s ease-in-out all;
     background-color: #2f9b05;
 }
 .btn.btn1 .icon {
-   /* background-color: aqua; */
    color: #141414; 
    display: flex;
    align-items: center;
@@ -44,11 +40,9 @@ transition: .4s ease-in-out all;
    height: 35px;
     transition: 1s ease-in-out all;
     opacity: 0;
-   /* top: 10vh; */
    bottom: .6vh;
 }
 .btn.btn1:hover span {
-    /* left: 10px; */
     z-index: 2;
     left: -30%;
     transition: .5s;

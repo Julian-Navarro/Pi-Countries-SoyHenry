@@ -138,8 +138,36 @@ export function postActivity(activity) {
         "http://localhost:3001/activities",
         activity
       );
-      console.log(newActivity);
       return newActivity;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function deleteActivity(id) {
+  return async function (dispatch) {
+    try {
+      let deletedActivity = await axios.put(
+        "http://localhost:3001/activities",
+        { id }
+      );
+      return deletedActivity.data;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function updateActivity(input) {
+  return async function (dispatch) {
+    try {
+      console.log(input);
+      let update = await axios.put(
+        "http://localhost:3001/activities/put",
+        input
+      );
+      return update.data;
     } catch (error) {
       console.log(error);
     }

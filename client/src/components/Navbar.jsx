@@ -7,7 +7,6 @@ import s from "./Navbar.module.css"
 export default function Navbar ({setCurrentPage}) {
 const dispatch = useDispatch();
 const continents = useSelector((state) => state.continents)
-// const continentsToFilter = useSelector((state) => state.continentsToFilter)
 const activities = useSelector((state)=> state.activities)
 const [country, setCountry] = useState("");
 const defaultValue = "default"
@@ -32,7 +31,6 @@ function handleSubmit(e) {
 function handleFilterContinents(e) {
     e.preventDefault();
     if(!(e.target.value === "default")) {
-        // if(!continentsToFilter.includes(e.target.value)) continentsToFilter.push(e.target.value);
         dispatch(filterContinents(e.target.value));
         setCurrentPage(1);
         e.target.value = defaultValue

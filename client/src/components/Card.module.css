@@ -5,10 +5,8 @@ text-decoration: none;
 .card {
     width: 250px;
     height: 350px;
-    /* border-radius: 15px; */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     color: rgba(109, 109, 109, 0.845);
     
@@ -19,7 +17,6 @@ text-decoration: none;
     border-image-slice: 20;
     float: left;
     color: rgba(40, 9, 112, 0.856);
-    /* border-radius: 30px; */
 }
 .card img {
     height:85px;

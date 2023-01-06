@@ -32,40 +32,15 @@ return (
     <div className={s.divContainer}>
         <section className={s.gridContainer}>
             <article className={s.item}>
-                {/* <h3>item 1</h3> */}
                 <Navbar setCurrentPage={setCurrentPage}/>
             </article>
             <article className={s.item}>
-                {/* <h3>item 2</h3> */}
                 <Cards countries={currentCountries}/>
             </article>
             <article className={s.item}>
-                {/* <h3>item 3</h3> */}
                 <Paginate paginate={paginate} countriesPerPage={countriesPerPage} allCountries={allCountries.length} currentPage={currentPage} />
             </article>
-            {/* <article className={s.item}>
-                <h3>item 4</h3>
-            </article>
-            <article className={s.item}>
-                <h3>item 5</h3>
-            </article>
-            <article className={s.item}>
-                <h3>item 6</h3>
-            </article>
-            <article className={s.item}>
-                <h3>item 7</h3>
-            </article>
-            <article className={s.item}>
-                <h3>item 8</h3>
-            </article>
-            <article className={s.item}>
-                <h3>item 9</h3>
-            </article> */}
         </section>
-        {/* <Link to="/createActivity"><button>Create Activity</button></Link> */}
-        {/* <Navbar setCurrentPage={setCurrentPage}/>
-        <Paginate paginate={paginate} countriesPerPage={countriesPerPage} allCountries={allCountries.length} currentPage={currentPage} />
-        <Cards countries={currentCountries}/> */}
     </div>
 )
 };

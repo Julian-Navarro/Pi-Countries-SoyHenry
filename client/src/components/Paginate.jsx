@@ -25,6 +25,7 @@ export default function Paginate({ countriesPerPage, allCountries, paginate, cur
         <ul className={s.buttonsPages}>
            {
                pageNumbers && pageNumbers.map((number)=> (
+                currentPage===number? <button className={s.buttonSelected} key={number} onClick={()=>{paginate(number)}} >{number}</button> : 
                    <button className={s.buttons} key={number} onClick={()=>{paginate(number)}} >{number}</button>
                    ))
            }

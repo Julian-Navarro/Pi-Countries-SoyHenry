@@ -12,7 +12,6 @@ export default function Landing () {
             </div>
 
             <Link to="/home">
-
             <div className="btnContainer">
             <button className="btn btn1">
                 <div className="icon">
@@ -23,85 +22,9 @@ export default function Landing () {
                 <span>Go there!</span>
             </button>
             </div>
-
             </Link>
-
-
-
-
+            
             <h2 className="h2">This app is created using React-Redux</h2>
-
-{/* 
-
-            <section className={s.divGrid}>
-                <article className={s.item}>
-                    <h3>Grid item 1</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 2</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 3</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 4</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 5</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 6</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 7</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 8</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 9</h3>
-                </article>
-                <article className={s.item}>
-                    <h3>Grid item 10</h3>
-                </article>
-            </section>
-
-
-            <h1>*******************</h1>
-
-            <section className={s.divGrid2}>
-                <article className={s.item2}>
-                    <Card id="ARG" name="Albertitere" continent="AHRRE" population="AHH NOOOO" activities={[{name: "Gilabert"}]} img="https://fotos.perfil.com/2022/12/13/trim/950/534/alberto-fernandez-1471271.jpg"/>
-                    <h3>Grid item 1</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 2</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 3</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 4</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 5</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 6</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 7</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 8</h3>
-                </article>
-                <article className={s.item2}>
-                    <h3>Grid item 9</h3>
-                </article>
-            </section>
-
-
-             */}
         </div>
     )
 };

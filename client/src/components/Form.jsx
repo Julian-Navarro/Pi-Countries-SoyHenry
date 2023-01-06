@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./Form.module.css"
 import { Link, useHistory } from "react-router-dom";
-import { postActivity } from "../actions"
+import { postActivity, deleteActivity, getCountries, getActivities, updateActivity } from "../actions"
 
 export default function Form() {
 const dispatch = useDispatch();
@@ -11,6 +11,7 @@ const countries = useSelector(state=>state.allCountries);
 const defaultValue = "defaultValue"
 const [seasonsToPass, setSeasonsToPass] = useState([])
 const [seasonsToRender, setSeasonsToRender] = useState([])
+const activities = useSelector((state)=> state.activities)
 const seasons = [
     {
         name: "Summer", 
@@ -32,8 +33,10 @@ const [input, setInput] = useState({
     difficult: 0,
     duration: 0,
     seasons: "",
-    countries: []
+    countries: [],
+    id: ""
 })
+
 function handleChange(e){
 e.preventDefault();
 setInput({
@@ -42,9 +45,9 @@ setInput({
 })
 };
 
-let currentCountries = []
-input.countries.forEach((name)=> {
-    countries.forEach((country)=> {
+let currentCountries = [];
+input.countries.forEach((name) => {
+    countries.forEach((country) => {
        if(country.name === name) {
         currentCountries.push(country)
        }
@@ -94,6 +97,7 @@ function handleErrors(e) {
 
 function handleSubmit(e) {
 e.preventDefault();
+
 let strSeasons = "";
 seasonsToPass.forEach((s)=> {
     strSeasons += `${s}, `
@@ -103,14 +107,14 @@ input.seasons = newstr
 
 dispatch(postActivity(input))
 alert("Activity created succesfully!")
-history.push("/home")
+window.location.reload()
+
 };
 function handleSelect(e){
     e.preventDefault();
     if(!input.countries.includes(e.target.value)){
         input.countries.push(e.target.value)
     }
-    console.log(e.target.value);
     e.target.value = defaultValue
 }
 function handleRemoveCountry(e){
@@ -139,12 +143,22 @@ function handleSelectSeasons(e){
     e.target.value = defaultValue
 };
 
+function handleDelete(e) {
+    dispatch(deleteActivity(e.target.value))
+    setTimeout(window.location.reload(), 100)
+}
 
+function handleUpdate(e){
+    dispatch(updateActivity(input))
+
+}
 
 
 useEffect(()=>{
+    dispatch(getActivities())
+    dispatch(getCountries())
+},[])
 
-},[countries])
 return (
     <div className={s.divContainer}>
         <div className={s.container}>
@@ -178,12 +192,22 @@ return (
                         <option value="defaultValue">Select Countries!</option>
                         {countries.map((c)=> <option value={c.name} key={c.id}>{c.name}</option>)}
                     </select>
-
-                <button type="submit">Submit</button>
+                        <button type="submit">Submit</button>
                 </div>
             </form>
             
         </div>
+
+        <div>
+            <h2>Delete  activity</h2>
+            <ul className={s.deleteUl}> 
+                {
+                    activities.map((a)=> <div className={s.deleteDiv}> <li>{a.name}</li> <button  value={a.id} onClick={(e)=>handleDelete(e)}>X</button> </div> )
+                }
+            </ul>
+
+        </div>
+
         </article>
         <article className={s.Item}>
         <div className={s.seasonsContainer}>
