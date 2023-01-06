@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
       id: {
         type: DataTypes.STRING(3),
         primaryKey: true,
-        // unique: true,
+        unique: true,
         allowNull: false,
         validate: {
           len: [3],

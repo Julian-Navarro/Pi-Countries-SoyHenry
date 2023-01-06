@@ -2,16 +2,16 @@ const { Country, Activity } = require("../../db");
 
 const getApiInfo = async (name) => {
   try {
-    const countriesDb = await Country.findAll();
-    const db = await Country.findAll({ include: [{ model: Activity }] });
+    const countriesFromDatabase = await Country.findAll({
+      include: [{ model: Activity }],
+    });
     if (name) {
-      let countriesByName = countriesDb.filter((c) =>
+      let countriesByName = countriesFromDatabase.filter((c) =>
         c.name.toLowerCase().includes(name.toLowerCase())
       );
       return countriesByName;
-    } else {
-      return db;
     }
+    return countriesFromDatabase;
   } catch (error) {
     console.log(error);
   }

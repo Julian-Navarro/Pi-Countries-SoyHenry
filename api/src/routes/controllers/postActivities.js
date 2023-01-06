@@ -8,8 +8,6 @@ const postActivity = async ({
   countries,
 }) => {
   try {
-    console.log("DIFFICULT!!!!! : ", typeof difficult);
-    console.log("DURATION!!!!!! :", typeof duration);
     let newActivity = await Activity.create({
       name,
       difficult,

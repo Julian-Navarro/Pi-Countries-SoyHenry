@@ -1,7 +1,7 @@
 const { Router } = require("express");
-const router = Router();
 const { postActivity } = require("./postActivities");
 const { Country, Activity } = require("../../db");
+const router = Router();
 
 router.post("/", async (req, res) => {
   try {
@@ -42,5 +42,27 @@ router.get("/activities", async (req, res) => {
     res.status(404).send(error);
   }
 });
+
+router.put("/", async (req, res) => {
+  try {
+    const { id } = req.body;
+    let destroy = await Activity.destroy({ where: { id: id } });
+    res.status(200).send("Activity deleted");
+  } catch (error) {
+    console.log(error);
+    res.status(404).send(error);
+  }
+});
+
+// router.put("/put", async (req, res) => {
+//   try {
+//     const { input } = req.body;
+//     console.log("INPUTTTTTTTTTTTTTTT!!!!!!!!", input);
+//     res.status(200).send("Activity changed");
+//   } catch (error) {
+//     console.log(error);
+//     res.status(404).send(error);
+//   }
+// });
 
 module.exports = router;

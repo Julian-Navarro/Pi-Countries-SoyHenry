@@ -6,7 +6,7 @@ const createCountriesIntoDb = async () => {
   const apiInfo = await axios.get(url);
 
   const countries = apiInfo.data.map((c) => {
-    let capital = c.capital ? c.capital[0] : "Capital doesn't exist";
+    let capital = c.capital ? c.capital[0] : "Not found";
     return {
       id: c.cca3,
       name: c.name.common,

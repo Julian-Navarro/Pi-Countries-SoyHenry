@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
     const countries = await getApiInfo(name);
     countries.length > 0
       ? res.status(200).send(countries)
-      : res.status(200).send("We didn't found countries with that name");
+      : res.status(200).send(vacio);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
