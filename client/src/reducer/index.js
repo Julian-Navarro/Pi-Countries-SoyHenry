@@ -2,7 +2,6 @@ const initialState = {
   countries: [],
   allCountries: [],
   continents: [],
-  // continentsToFilter: [],
   activities: [],
   countryDetail: {},
 };

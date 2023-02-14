@@ -138,9 +138,12 @@ export function postActivity(activity) {
         "http://localhost:3001/activities",
         activity
       );
+      alert("Activity created succesfully!");
+      console.log("Algo salio mal");
       return newActivity;
     } catch (error) {
       console.log(error);
+      alert("Algo salió mal");
     }
   };
 }

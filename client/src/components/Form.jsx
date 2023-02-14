@@ -62,10 +62,10 @@ const errors = {
     countries: ""
 }
 
-
 function handleErrors(e) {
     e.preventDefault();
     if(input.name === "") {
+
         errors.name = "A name is required!"
     }
     if(input.duration !== 0){
@@ -106,7 +106,6 @@ let newstr = strSeasons.slice(0, -2)
 input.seasons = newstr
 
 dispatch(postActivity(input))
-alert("Activity created succesfully!")
 window.location.reload()
 
 };
@@ -198,7 +197,7 @@ return (
             
         </div>
 
-        <div>
+        <div className={s.deleteActivity}>
             <h2>Delete  activity</h2>
             <ul className={s.deleteUl}> 
                 {

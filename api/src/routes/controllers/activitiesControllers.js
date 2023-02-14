@@ -9,6 +9,11 @@ router.post("/", async (req, res) => {
     if (!name || !countries) {
       throw Error("There are missing data to create the activity!");
     }
+    // name.length > 50 ? res.status(404).send("Algo salio mal") : null;
+    if (name.length > 50) {
+      return res.status(500).send(Error("Algo ha salido mal"));
+      // throw new Error("Algo salio mal!");
+    }
     let newActivity = postActivity(req.body);
     res.status(200).send("Activity created succesfully");
   } catch (error) {
